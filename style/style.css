@@ -1,0 +1,233 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    font-family: 'Manrope', sans-serif;
+    color: hsl(217, 19%, 35%);
+}
+
+:root {
+    --main-bg-color: hsl(210, 46%, 95%);
+    --social-media-bg: hsl(217, 19%, 35%);
+}
+
+
+/* GENERAL BODY AND CONTAINER STYLING */
+body {
+    height: 100vh;
+    background-color: var(--main-bg-color);
+    position: relative;
+}
+
+.container {
+    display: flex;
+    position: absolute;
+    inset: 50% 50%;
+    transform: translate(-50%, -50%);
+    height: 16rem;
+    width: 43rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px hsla(212, 23%, 69%, 0.3 );
+}
+
+/* INNER PARTS OF CONTAINER */
+
+.first-part {
+    flex-basis: 39%;
+    width: 100%;
+    background-image: url(../img/drawers.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px 0 0 10px;
+}
+
+.second-part {
+    position: relative;
+    flex-basis: 61%;
+    padding: 2.1rem 2.2rem 2.1rem 2.1rem;
+}
+
+.second-part--bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* FONTS */
+
+h1, p, h6 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 1.2rem;
+    margin-bottom: .9rem;
+}
+
+h6 {
+    font-size: .8rem;
+}
+
+h5 {
+    color: white;
+    font-weight: 500;
+    letter-spacing: .4rem;
+    opacity: .4;
+}
+
+p {
+    font-size: .75rem;
+    opacity: .65;
+    margin-bottom: 1rem;
+}
+
+.date {
+    opacity: .4;
+}
+
+/* AVATAR PART */
+
+.creator {
+    display: flex;
+}
+
+.avatar {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 100%;
+    margin-right: 1rem;
+}
+
+/* SOCIAL MEDIA ARROW */
+
+.social-media-arrow {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    background: var(--main-bg-color);
+    display: grid;
+    place-items: center;
+    border-radius: 100%;
+}
+
+.social-media-arrow img {
+    width: 1rem;
+    background: var(--main-bg-color);
+}
+
+.social-media-arrow:active, .social-media-arrow:active > * {
+    background: var(--social-media-bg);
+}
+
+.social-media-arrow:hover {
+    cursor: pointer;
+}
+
+
+/* CLASS TO BE ADDED WITH JS */
+
+.social-media-arrow-active {
+    background: var(--social-media-bg);
+}
+
+/* SOCIAL MEDIA POP UP */
+
+.social-media, .social-media--arrow-pointing {
+    background: var(--social-media-bg);
+    position: absolute;
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    top: 7.5rem;
+    left: 15rem;
+    width: 16rem;
+    height: 3.5rem;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.social-media--arrow-pointing {
+    width: 1rem;
+    height: 1rem;
+    transform: rotate(45deg);
+    top: 10.5rem;
+    left: 22.5rem;
+    z-index: 0;
+}
+
+.social-media img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* CLASS FOR TOGGLING THE SHARE POP UP */
+
+.hide {
+    opacity: 0;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 859px) {
+    .container {
+        flex-direction: column;
+        height: 58vh;
+        width: 20rem;
+    }
+
+    .second-part {
+        position: relative;
+        flex-basis: 61%;
+        padding: 2.1rem 1.7rem 0 2.1rem;
+    }
+
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: .79rem;
+        line-height: 1.6em;
+    }
+
+    .first-part {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .social-media {
+        top: 78%;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 4rem;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .social-media-arrow {
+        z-index: 10;
+    }
+
+    .social-media img {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    .social-media {
+        display: flex;
+        padding: 0 5rem 0 1rem;
+    }
+
+    .social-media-arrow img {
+        display: flex;
+        align-items: center;
+    }
+
+    .second-part--bottom {
+        margin-top: 3rem;
+    }
+}
